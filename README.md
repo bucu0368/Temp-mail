@@ -1,5 +1,5 @@
 
-# 📧 Temp Email - Temporary Email Application
+# 📧 Temp Email
 
 A free, temporary email service built with Node.js and Express that uses the Mail.tm API to generate disposable email addresses. Perfect for protecting your primary email from spam and unwanted subscriptions.
 
