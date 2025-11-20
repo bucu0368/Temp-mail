@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp Email - Nhận Email Tạm Thời</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📧 Temp Email</h1>
+            <p class="subtitle">Nhận email tạm thời miễn phí - Bảo vệ email chính của bạn</p>
+        </header>
+
+        <div class="email-section">
+            <div class="email-display">
+                <div class="email-box">
+                    <input type="text" id="emailAddress" readonly placeholder="Đang tạo email...">
+                    <button id="copyBtn" class="btn btn-copy" title="Sao chép">
+                        📋 Copy
+                    </button>
+                    <button id="refreshBtn" class="btn btn-refresh" title="Tạo email mới">
+                        🔄 Tạo mới
+                    </button>
+                </div>
+                <div class="email-info">
+                    <p>Email sẽ tự động làm mới mỗi <span id="countdown">60</span> giây</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="inbox-section">
+            <div class="inbox-header">
+                <h2>📬 Hộp thư đến (<span id="emailCount">0</span>)</h2>
+                <button id="refreshInbox" class="btn btn-small">🔄 Làm mới</button>
+            </div>
+            
+            <div id="loadingIndicator" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Đang tải email...</p>
+            </div>
+
+            <div id="emailList" class="email-list">
+                <div class="empty-state">
+                    <p>📭 Chưa có email nào</p>
+                    <p class="small-text">Email sẽ xuất hiện ở đây khi có người gửi</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="emailModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="email-detail">
+                    <h3 id="modalSubject"></h3>
+                    <div class="email-meta">
+                        <p><strong>Từ:</strong> <span id="modalFrom"></span></p>
+                        <p><strong>Đến:</strong> <span id="modalTo"></span></p>
+                        <p><strong>Thời gian:</strong> <span id="modalDate"></span></p>
+                    </div>
+                    <div class="email-body">
+                        <iframe id="modalBody" sandbox="allow-same-origin"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>⚡ Powered by Mail.tm API | Email tạm thời - An toàn & Miễn phí</p>
+            <p class="small-text">Email sẽ tự động xóa sau 24 giờ</p>
+        </footer>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
